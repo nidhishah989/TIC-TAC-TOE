@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import './home.css'
 import pencil from '../assets/pencil1.png'
-import circle from '../assets/circle.png'
+// import circle from '../assets/circle.png'
 import Player from './Player'
 
 
@@ -13,21 +13,25 @@ function Home({Setgamestatus,SetGameMode,Players,setPlayers}) {
     
     const [Mode,SetMode]=useState('')
     const modeselection= (modev)=>{
-        SetGameMode(modev)
-        SetMode(modev)
+        if (modev === 'SinglePlayer'){
+            setPlayers({...Players,player2:'Robot'});
+        }
+        else{
+            setPlayers({...Players,player2:''});
+        }
+        console.log("In home: ",Players.player2);
+        SetGameMode(modev);
+        SetMode(modev);
         handleShow();
+        
     }
 
-    const setfinalgameboard=()=>{
-        if (Mode === 'SinglePlayer'){
-            setPlayers({...Players,player2:'Robot'})
-        }
-        Setgamestatus(true)
-    }
-    
     const [PlayerInfoshow, setShow] = useState(false);
     const handleShow = () => setShow(true);
-    const handleClose = () => setShow(false);;
+    const handleClose = () =>{
+        setShow(false);
+        Setgamestatus(true);
+    } ;
 
     
   return (

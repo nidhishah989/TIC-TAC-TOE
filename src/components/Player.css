@@ -1,0 +1,89 @@
+.dialog-box{
+    width:auto;
+    height: fit-content;
+    /* background-color: aqua; */
+   
+    
+}
+
+/* .modal-content{
+    background-color: #105c76;
+    border-radius: 23px;
+} */
+.dialog-header{
+    background-color: #0b4052;
+    text-align: center;
+    display: block !important;
+}
+.dialog-title{
+    color:whitesmoke;
+    font-family: Brahh One;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 23px;
+}
+.dialog-body{
+    /* background-color: white; */
+    margin: 13px;
+    border-radius: 10px;
+}
+
+.dialog-names{
+    font-family: 'Oswald', sans-serif;
+    font-style: normal;
+    /* font-weight: bold; */
+    font-size: 20px;
+}
+.dialog-marks{
+    font-family: Brahh One;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 23px;
+    
+    border:none;
+    /* background-color: #0b4052; */
+    /* border-color:w#0b4052; */
+    border-radius: 10px;
+    /* padding-left: 25px;
+    padding-right: 25px; */
+    padding-top:20px;
+    padding-bottom: 20px;
+    margin-bottom: 50px;
+    margin-top: 15px;
+    text-align: center;
+    /* padding: 15px 6px 5px 0px; */
+}
+
+.mark-options{
+    background-color: #0f5268;
+    border-color:#0b4052;
+    padding:15px;
+    margin:10px;
+    border-radius: 10px;
+    border-width: 4px;
+    
+}
+.btn-outline-success{
+    font-family: monospace;
+    font-size: 40px;
+    width: 100%;
+    font-weight:bolder;
+    border-radius: 10px;
+    background: none;
+    border: none;
+}
+
+.btn-outline-danger{
+    font-size: 34px;
+    width: 100%;
+    border-radius: 10px;
+    background: none;
+    border: none;
+
+}
+
+/* .btn-danger{
+    background: none;
+    border: none;
+} */
+

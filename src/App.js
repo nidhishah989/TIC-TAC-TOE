@@ -6,7 +6,7 @@ function App() {
 
   const [GameStatus,Setgamestatus] = useState(false)
   const [GameMode,SetGameMode]=useState('')
-  const [Players,setPlayers]=useState({player1:'',player1mark:'',player2:'',player2mark:''})
+  const [Players,setPlayers]=useState({player1:'',player1mark:'X',player2:'',player2mark:''})
   console.log(GameMode)
   console.log(Players)
   return (
