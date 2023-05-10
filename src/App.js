@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Home from './components/home.jsx';
 
 function App() {
+
+  const [GameStatus,Setgamestatus] = useState(false)
+  const [GameMode,SetGameMode]=useState('')
+  const [Players,setPlayers]=useState({player1:'',player1mark:'',player2:'',player2mark:''})
+  console.log(GameMode)
+  console.log(Players)
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App d-flex align-items-center min-vh-100">
+      
+      {/* Game status check */} 
+      {GameStatus? 
+       (<div> 
+        Game on
+        <h1> Game MOde is: {GameMode}</h1>
+        <h1>Player1 is {Players.player1}</h1>
+        <h1>Player2 is {Players.player2}</h1>
+        </div>) : 
+       (<div className="container home-screen">
+         <Home Setgamestatus= {Setgamestatus} SetGameMode={SetGameMode} Players={Players} setPlayers={setPlayers}/>
+         
+        </div>
+        
+        )
+      }
     </div>
   );
 }

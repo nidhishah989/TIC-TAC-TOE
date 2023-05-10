@@ -1,0 +1,95 @@
+/* .home-layout{
+    background-color: rgb(168, 168, 212);
+    height: fit-content;
+} */
+
+.title{
+    font-family: Darumadrop One;
+   
+}
+
+.title-x{
+    color:#F2B137;
+    font-size: 40px;
+}
+
+.title-o{
+    color:tomato;
+    font-size: 40px;
+}
+
+.game-name{
+    color:whitesmoke;
+    font-size:35px;
+}
+
+.game-mode{
+    border:none;
+    background-color: #0b4052;
+    border-color:w#0b4052;
+    border-radius: 25px;
+    /* padding-left: 25px;
+    padding-right: 25px; */
+    padding-top:20px;
+    margin-bottom: 50px;
+    margin-top: 20px;
+    
+    /* box-shadow: 0px -8px 0px 0px #10212A inset; */
+    
+}
+.pickgame{
+    color:#A8BFC9;
+    font-family: Brahh One;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 23px;
+    
+}
+.singleplay{
+    background-color:#F2B137;
+    font-size: 26px;
+    border-radius: 20px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    box-shadow: 0px 5px 0px 0px #a47825;
+    /* width: 100%; */
+}
+.singleplay:hover{
+    background-color: #FFC860;
+}
+
+.singleplay:focus {
+    background-color: #FFC860;
+    box-shadow: 0 5px #666;
+    
+  }
+
+.multiplay{
+    background-color:tomato;
+    font-size: 26px;
+    border-radius: 20px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: bold;
+    box-shadow: 0px 5px 0px 0px rgb(172, 59, 39);
+    /* width:100%; */
+}
+.multiplay:hover{
+    background-color: rgb(253, 130, 108);
+}
+
+.multiplay:focus {
+    background-color: rgb(253, 130, 108);
+    box-shadow: 0 5px #666;
+    
+  }
+
+.left-layout{
+    padding-right: 0px;
+}
+.right-layout{
+    background-color: #1F3641;
+    border-radius: 5%;
+   
+    /* border-top-right-radius: 5%;
+    border-bottom-right-radius: 5%; */
+}
