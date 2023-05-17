@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useRef, useState } from 'react'
 import './home.css'
 import pencil from '../assets/pencil1.png'
 // import circle from '../assets/circle.png'
@@ -10,11 +10,11 @@ import Player from './Player'
 
 function Home({Setgamestatus,SetGameMode,Players,setPlayers}) {
 
-    
+    const [f,changef]=useState('n')
     const [Mode,SetMode]=useState('')
     const modeselection= (modev)=>{
         if (modev === 'SinglePlayer'){
-            setPlayers({...Players,player2:'Robot'});
+            setPlayers({...Players,player2:'COMPUTER'});
         }
         else{
             setPlayers({...Players,player2:''});
@@ -28,12 +28,20 @@ function Home({Setgamestatus,SetGameMode,Players,setPlayers}) {
 
     const [PlayerInfoshow, setShow] = useState(false);
     const handleShow = () => setShow(true);
-    const handleClose = () =>{
+    const handleClose = (e) =>{
+        // window.alert("handle close function")
+        // console.log("The value of button",e.target.value)
+        if(f==='n'){
+            console.log("form not filled")
+        }
+        else{
+            console.log("form filled")
+            Setgamestatus(true)
+        }
         setShow(false);
-        Setgamestatus(true);
-    } ;
+    } 
 
-    
+    console.log("form submitted? => ",f)
   return (
     
         <div className="row home-layout mx-auto justify-content-center">
@@ -56,7 +64,7 @@ function Home({Setgamestatus,SetGameMode,Players,setPlayers}) {
                                 </div>
                                 
                                     <div className='col align-self-center'>
-                                    <button class="btn singleplay mb-4 p-4" onClick={()=>modeselection('SinglePlayer')}> NEW GAME (VS ROBOT)</button>
+                                    <button class="btn singleplay mb-4 p-4 px-2" onClick={()=>modeselection('SinglePlayer')}> NEW GAME (VS COMPUTER)</button>
                                     </div>
                                     <div className='col align-self-center '>
                                     <button class="btn multiplay  mb-5 p-4" onClick={()=>modeselection('MultiPlayer')} > NEW GAME (VS PLAYER)</button>                                    
@@ -65,7 +73,7 @@ function Home({Setgamestatus,SetGameMode,Players,setPlayers}) {
                             </div>
                         </div>
 
-                        <Player Mode={Mode} Players={Players} setPlayers={setPlayers}  PlayerInfoshow={PlayerInfoshow} handleClose={handleClose}/>
+                        <Player Mode={Mode} Players={Players} setPlayers={setPlayers} PlayerInfoshow={PlayerInfoshow} handleClose={handleClose} Setgamestatus={Setgamestatus} changef={changef}/>
                     </div>
                    
             </div>

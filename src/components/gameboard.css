@@ -1,0 +1,75 @@
+.gameboardwindow{
+    /* background-color: blueviolet; */
+    /* width: 350px; */
+    /* padding: 2px; */
+    margin: auto;
+     border:2px solid #0b4052;
+     border-radius: 20px;
+     /* background-color:whitesmoke; */
+}
+.board-title{
+    background-color: #0b4052;
+    font-family: Darumadrop One;
+    color:whitesmoke;
+    /* margin:auto; */
+    align-items: center;
+    /* border:0px 2px; */
+    border-top-left-radius: 18px;
+    border-top-right-radius: 18px;
+}
+
+.bi-house-gear-fill{
+    font-size: xx-large;
+    color:aquamarine
+}
+
+.player1info{
+    /* border: solid 2px black; */
+    padding: 0;
+    border-radius: 10px;
+}
+
+.player2info{
+    /* border: solid 2px black; */
+    padding: 0 4px 0 4px;
+    border-radius: 10px;
+}
+
+.playerinfoboard{
+    font-family: Outfit;
+    font-weight: bold;
+    font-style: normal;
+    font-size: 16px;
+    padding-top:10px;
+    margin: auto;
+}
+
+.boardwindow{
+    margin:auto;
+}
+.board-row{
+    flex-wrap:nowrap;
+}
+.board-row{
+    /* background-color: blue; */
+    /* margin: auto; */
+    padding-bottom: 10px;
+}
+
+.square{
+    background-color:whitesmoke;
+    width:90px;
+    height:90px;
+    padding: 0;
+    /* box-shadow: 0px 5px 0px 0px #a47825; */
+    border:solid 1px #0b4052;
+
+}
+
+.x-player{
+    background-color: #F2B137;
+}
+
+.o-player{
+    background-color: tomato;
+}

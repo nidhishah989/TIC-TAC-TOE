@@ -17,3 +17,11 @@
    
 } 
 
+.game{
+  height: auto;
+  width:fit-content;
+  /* min-width: 300px; */
+  /* border:2px solid #0b4052; */
+  /* background-color: #379ec1; */
+}
+

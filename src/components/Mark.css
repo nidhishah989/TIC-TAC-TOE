@@ -1,0 +1,23 @@
+.btn-outline-success{
+    width: 100%;
+    border:none;
+    --bs-btn-color: #F2B137;
+    --bs-btn-active-bg:#F2B137;
+    font-family: monospace;
+    font-size: 40px;
+    width: 100%;
+    font-weight:bolder;
+    border-radius: 10px;
+    /* background-color:blue; */
+}
+.btn-outline-danger{
+    width: 100%;
+    border:none;
+    --bs-btn-color: tomato;
+    --bs-btn-active-bg:tomato;
+    font-family: monospace;
+    font-size: 40px;
+    width: 100%;
+    font-weight:bolder;
+    border-radius: 10px;
+}

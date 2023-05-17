@@ -12,44 +12,54 @@
 } */
 .dialog-header{
     background-color: #0b4052;
-    text-align: center;
-    display: block !important;
+    display: block;
+    padding: 10px;
+}
+
+.dialog-header .btn-close{
+    margin:0px;
+    position: absolute;
+    right:10px;
+    top:6px;
 }
 .dialog-title{
     color:whitesmoke;
-    font-family: Brahh One;
-    font-style: normal;
-    font-weight: bold;
-    font-size: 23px;
+    font-family: Open Sans;
+    font-weight:bolder;
+    font-size: 20px;
+    text-align: center;
 }
 .dialog-body{
     /* background-color: white; */
     margin: 13px;
     border-radius: 10px;
 }
+.player2-input:read-only{
+  background-color: lightgray;
+}
 
 .dialog-names{
-    font-family: 'Oswald', sans-serif;
-    font-style: normal;
-    /* font-weight: bold; */
-    font-size: 20px;
+    /* font-family: 'Oswald', sans-serif; */
+    /* font-style: normal; */
+    font-weight: bold;
+    font-size: 18px;
 }
 .dialog-marks{
-    font-family: Brahh One;
-    font-style: normal;
+    /* font-family: Brahh One; */
+    /* font-style: normal; */
     font-weight: bold;
-    font-size: 23px;
+    font-size: 18px;
     
     border:none;
     /* background-color: #0b4052; */
     /* border-color:w#0b4052; */
-    border-radius: 10px;
+    border-radius: 5px;
     /* padding-left: 25px;
     padding-right: 25px; */
-    padding-top:20px;
-    padding-bottom: 20px;
-    margin-bottom: 50px;
-    margin-top: 15px;
+    /* padding-top:10px; */
+    padding-bottom: 0px;
+    /* margin-bottom: 50px; */
+    margin-top: 1px;
     text-align: center;
     /* padding: 15px 6px 5px 0px; */
 }
@@ -57,31 +67,39 @@
 .mark-options{
     background-color: #0f5268;
     border-color:#0b4052;
-    padding:15px;
+    padding:7px;
     margin:10px;
+    margin-top: 5px;
     border-radius: 10px;
     border-width: 4px;
     
 }
-.btn-outline-success{
-    font-family: monospace;
-    font-size: 40px;
-    width: 100%;
-    font-weight:bolder;
-    border-radius: 10px;
-    background: none;
-    border: none;
+
+.start-game-btn{
+    background-color: #0f5268;
+    color:white;
+    
 }
 
-.btn-outline-danger{
-    font-size: 34px;
-    width: 100%;
-    border-radius: 10px;
-    background: none;
-    border: none;
-
+.cancle-setting-btn{
+    background-color: rgb(170, 53, 53);
+    color:white;
+    
 }
 
+.startgamebtn{
+    background-color: #0b4052;
+    color:white;
+    font-family: Open Sans ;
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 12px;
+}
+
+.startgamebtn:hover{
+    background-color: #0f5268;
+    color: white;
+}
 /* .btn-danger{
     background: none;
     border: none;
