@@ -1,9 +1,22 @@
-import {React,useState} from 'react'
+import {React,useState,useEffect,useRef} from 'react'
 import './gameboard.css'
 import Square from './square.jsx'
 import Declaration from './declaration.jsx';
 
 function Gameboard ({Setgamestatus,Players}){
+
+    
+    const win = useRef(null)
+    useEffect(() => { 
+        if(win.current === null){
+            console.log("Effect ran"); 
+        }
+        else{
+            console.log("winner change")
+            setShow(true)
+        }
+       
+      },[win.current]);
     
     // for game-board status
     const [squares,setsquare]=useState(Array(9).fill(null));
@@ -12,9 +25,14 @@ function Gameboard ({Setgamestatus,Players}){
     // for dynamic styling for player information
     let player1style = Players.player1mark === 'X' ?'x-player' :'o-player';
     const player2style = Players.player2mark === 'X'?'x-player' :'o-player';
+
+    const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
     
     // handle winner calculation
-    function checkWinner(){
+    const checkWinner= ()=>{
         console.log("Checking winner")
         const winnerposs= [
             [0,1,2],
@@ -32,7 +50,12 @@ function Gameboard ({Setgamestatus,Players}){
             console.log(a,b,c)
             if(squares[a] && squares[a]===squares[b] && squares[b]===squares[c]){
               const winnername = squares[a] === Players.player1mark ? Players.player1 :squares[a] === Players.player2mark ? Players.player2 :'';
+            //   alert("WINNER- ",winnername)
+            //   handleShow();
+              win.current=winnername;
+              console.log("inside checkwinner: ",win.current)
               return winnername;
+              
             }
         }
 
@@ -40,24 +63,23 @@ function Gameboard ({Setgamestatus,Players}){
 
     }
 
-    function checkGameOver(){
+    const checkGameOver=()=>{
         if (squares.includes(null)){
             return false;
         }
         else{
+            // alert("Game Over")
             return true;
         }
     }
     
     var winner = checkWinner();
     var gameover = checkGameOver();
-    
 
-  
     console.log("WINNER IS: ",winner)
     console.log("IS GAME OVER? ",gameover)
     //Handle process when player click on button
-    function handleSQClick(index){
+    const handleSQClick= (index)=>{
         
         const squarenewstate = squares.slice()
         //check the index is null or not
@@ -88,8 +110,6 @@ function Gameboard ({Setgamestatus,Players}){
     // winner -> no-> gameover-> yes-> declare game over
     // winner -> no-> gameover-> no-> continue game 
     return (
-        <>
-         
         <div className=' container gameboardwindow'>
             {/* Board game title*/}
             <div className='row board-title'>
@@ -158,8 +178,8 @@ function Gameboard ({Setgamestatus,Players}){
                 </div>
             </div>
             </div>
+            <Declaration show={show}></Declaration>:''
         </div>
-       </>
     );
 }
 
