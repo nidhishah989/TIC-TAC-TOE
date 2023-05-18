@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, {useState } from 'react'
 import './home.css'
 import pencil from '../assets/pencil1.png'
 // import circle from '../assets/circle.png'
@@ -19,7 +19,7 @@ function Home({Setgamestatus,SetGameMode,Players,setPlayers}) {
         else{
             setPlayers({...Players,player2:''});
         }
-        console.log("In home: ",Players.player2);
+       
         SetGameMode(modev);
         SetMode(modev);
         handleShow();
@@ -29,19 +29,16 @@ function Home({Setgamestatus,SetGameMode,Players,setPlayers}) {
     const [PlayerInfoshow, setShow] = useState(false);
     const handleShow = () => setShow(true);
     const handleClose = (e) =>{
-        // window.alert("handle close function")
-        // console.log("The value of button",e.target.value)
         if(f==='n'){
-            console.log("form not filled")
+            Setgamestatus(false)
         }
         else{
-            console.log("form filled")
             Setgamestatus(true)
         }
         setShow(false);
     } 
 
-    console.log("form submitted? => ",f)
+   
   return (
     
         <div className="row home-layout mx-auto justify-content-center">
@@ -64,10 +61,10 @@ function Home({Setgamestatus,SetGameMode,Players,setPlayers}) {
                                 </div>
                                 
                                     <div className='col align-self-center'>
-                                    <button class="btn singleplay mb-4 p-4 px-2" onClick={()=>modeselection('SinglePlayer')}> NEW GAME (VS COMPUTER)</button>
+                                    <button className="btn singleplay mb-4 p-4 px-2" onClick={()=>modeselection('SinglePlayer')}> NEW GAME (VS COMPUTER)</button>
                                     </div>
                                     <div className='col align-self-center '>
-                                    <button class="btn multiplay  mb-5 p-4" onClick={()=>modeselection('MultiPlayer')} > NEW GAME (VS PLAYER)</button>                                    
+                                    <button className="btn multiplay  mb-5 p-4" onClick={()=>modeselection('MultiPlayer')} > NEW GAME (VS PLAYER)</button>                                    
                                     </div>
                                 
                             </div>
