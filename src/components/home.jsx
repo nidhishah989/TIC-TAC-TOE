@@ -1,7 +1,6 @@
 import React, {useState } from 'react'
 import './home.css'
 import pencil from '../assets/pencil1.png'
-// import circle from '../assets/circle.png'
 import Player from './Player'
 
 
