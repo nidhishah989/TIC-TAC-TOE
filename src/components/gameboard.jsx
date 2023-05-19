@@ -44,6 +44,7 @@ function Gameboard ({Setgamestatus,Players,GameMode,setPlayers,SetGameMode}){
       },[win.current,gover.current]);
       
       useEffect(()=>{
+        
         if(GameMode === 'SinglePlayer' && !player1turn){
             computerturn.current=true
             //computer pick any random empty square to fill
@@ -59,7 +60,8 @@ function Gameboard ({Setgamestatus,Players,GameMode,setPlayers,SetGameMode}){
       },[squares])
     
     // handle winner calculation
-    const checkWinner= ()=>{
+    const checkWinner= (newsqur)=>{
+        console.log("checking winner")
         const winnerposs= [
             [0,1,2],
             [3,4,5],
@@ -73,10 +75,10 @@ function Gameboard ({Setgamestatus,Players,GameMode,setPlayers,SetGameMode}){
         
         for( let i=0; i<winnerposs.length;i++){
             const [a,b,c]=winnerposs[i]
-            if(squares[a] && squares[a]===squares[b] && squares[b]===squares[c]){
-              const winnername = squares[a] === Players.player1mark ? Players.player1 :squares[a] === Players.player2mark ? Players.player2 :'';
-              win.current=winnername;
-            //   return winnername;
+            if(newsqur[a] && newsqur[a]===newsqur[b] && newsqur[b]===newsqur[c]){
+              const winnername = newsqur[a] === Players.player1mark ? Players.player1 :newsqur[a] === Players.player2mark ? Players.player2 :'';
+            //   win.current=winnername;
+               return winnername;
               
             }
         }
@@ -85,23 +87,23 @@ function Gameboard ({Setgamestatus,Players,GameMode,setPlayers,SetGameMode}){
 
     }
 
-    const checkGameOver=()=>{
-        if (squares.includes(null)){
-            gover.current=false;
-            // return false;
+    const checkGameOver=(newsqure)=>{
+        if (newsqure.includes(null)){
+            // gover.current=false;
+            return false;
         }
         else{
-            gover.current=true;
-            // return true;
+            // gover.current=true;
+            return true;
         }
     }
     
-    checkWinner();
-    checkGameOver();
+    // win.current=checkWinner();
+    // gover.current=checkGameOver();
 
     //Handle process when player click on button
     const handleSQClick= (index)=>{
-        
+        console.log("handling player click")
         const squarenewstate = squares.slice()
         //check the index is null or not
         // if player 1 turn: player1 mark will show otherwise player 2
@@ -110,7 +112,9 @@ function Gameboard ({Setgamestatus,Players,GameMode,setPlayers,SetGameMode}){
             squarenewstate[index]= player1turn ? Players.player1mark : Players.player2mark;
             setsquare(squarenewstate)
             setplayer1turn(!player1turn)
-            
+            win.current=checkWinner(squarenewstate);
+            gover.current=checkGameOver(squarenewstate);
+
         }
         }
         
