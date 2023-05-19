@@ -95,6 +95,20 @@
     box-shadow: 0px 5px 0px 0px #a47825;
     /* width: 50%; */
 }
+.continuebutton:hover{
+    background-color: #FFC860;
+}
+
+.continuebutton:focus{
+    background-color:#edbe67;
+    box-shadow: 0 5px #666;
+}
+
+.continuebutton:focus:active{
+    background-color:#edbe67;
+    box-shadow: 0 5px #666;
+}
+
 .quitbutton{
     background-color:tomato;
     font-size: 26px;
@@ -103,6 +117,18 @@
     font-weight: bold;
     box-shadow: 0px 5px 0px 0px rgb(172, 59, 39);
 
+}
+
+.quitbutton:hover{
+    background-color: rgb(253, 130, 108);
+}
+.quitbutton:focus{
+    background-color: rgb(253, 130, 108);
+    box-shadow: 0 5px #666;
+}
+.quitbutton:focus:active{
+    background-color: rgb(253, 130, 108);
+    box-shadow: 0 5px #666;
 }
 .mheader{
     background-color: #0b4052;

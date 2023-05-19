@@ -43,16 +43,83 @@ function Gameboard ({Setgamestatus,Players,GameMode,setPlayers,SetGameMode}){
         
       },[win.current,gover.current]);
       
+      function score(board,){
+
+      }
+      ///////////////////////// COMPUTER MOVE CALCULATOR ////////////
+      function minimax(boarddata, isComputer,depth){
+        // console.log(boarddata,isComputer,depth);
+        //-------RECURSION BASE
+        //check winner if any
+                let winname = checkWinner(boarddata)
+                if (winname === 'COMPUTER'){ return {evaluation : 100-depth} }//computer -win
+                if(winname === Players.player1) {return {evaluation : depth-100}} //other player win
+                if (checkGameOver(boarddata)) {return {evaluation:0}}// is tie            
+            //----------
+            //----- minimax code 
+            depth =depth +1;
+            //find all empty spots
+            let emptyindexes = boarddata.map((square,index)=>{return square==null?index:null }).filter(val=>val!=null)
+            // console.log(emptyindexes)
+
+            // save all moves : 
+            let moves =[]
+
+            //call to find score for each move
+            emptyindexes.forEach(space=>{ 
+                // console.log("FOR LOOP")
+                // console.log("THE SPACE value: ",space)
+                let backupspace = boarddata[space]; 
+                boarddata [space]= isComputer ? Players.player2mark : Players.player1mark;
+                let move={}
+                move.id = space;
+                move.evaluation = minimax(boarddata,!isComputer,depth).evaluation;
+                boarddata [space]=backupspace;
+                moves.push(move)
+            })
+
+            
+
+            // now find the score and find the best move
+            let bestmove;
+            if (isComputer){
+                let bestevaluation = -Infinity;
+                for (let i=0; i<moves.length;i++){
+                    if (moves[i].evaluation > bestevaluation){
+                        bestevaluation = moves[i].evaluation;
+                        bestmove=moves[i]
+                    }
+                }
+
+            }
+            else {
+                let bestevaluation = Infinity;
+                for (let i=0; i<moves.length;i++){
+                    if (moves[i].evaluation < bestevaluation){
+                        bestevaluation = moves[i].evaluation;
+                        bestmove=moves[i]
+                    }
+                }
+
+            }
+        return bestmove;
+      }
+      ///////////////////////
       useEffect(()=>{
-        
         if(GameMode === 'SinglePlayer' && !player1turn && win.current===null){
             computerturn.current=true
             //computer pick any random empty square to fill
-            let emptyindexes = squares.map((square,index)=>{return square==null?index:null }).filter(val=>val!=null)
+            // let emptyindexes = squares.map((square,index)=>{return square==null?index:null }).filter(val=>val!=null)
             // now random index pick and change the state of board with computer move
-            let cindex = Math.floor(Math.random() * emptyindexes.length)
+            // let cindex = Math.floor(Math.random() * emptyindexes.length)
+            
+            /////////////////////////////
+            //CALL function minimax to find computer's move
             const newsqaures = squares.slice()
-            newsqaures[emptyindexes[cindex]]= player1turn ? Players.player1mark : Players.player2mark;
+            var depth=0
+            let cindex = minimax(newsqaures,computerturn.current,depth).id
+           
+            newsqaures[cindex]= player1turn ? Players.player1mark : Players.player2mark;
             setsquare(newsqaures)
             setplayer1turn(!player1turn)
             computerturn.current=false
@@ -63,7 +130,7 @@ function Gameboard ({Setgamestatus,Players,GameMode,setPlayers,SetGameMode}){
     
     // handle winner calculation
     const checkWinner= (newsqur)=>{
-        console.log("checking winner")
+        // console.log("checking winner")
         const winnerposs= [
             [0,1,2],
             [3,4,5],
@@ -86,7 +153,6 @@ function Gameboard ({Setgamestatus,Players,GameMode,setPlayers,SetGameMode}){
         }
 
         return null;
-
     }
 
     const checkGameOver=(newsqure)=>{

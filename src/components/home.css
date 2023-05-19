@@ -64,6 +64,12 @@
     
   }
 
+.singleplay:focus:active {
+    background-color: #FFC860;
+    box-shadow: 0 5px #666;
+    
+  }
+
 .multiplay{
     background-color:tomato;
     font-size: 26px;
@@ -83,6 +89,13 @@
     box-shadow: 0 5px #666;
     
   }
+
+.multiplay:focus:active {
+    background-color: rgb(253, 130, 108);
+    box-shadow: 0 5px #666;
+    
+  }
+
 
 .left-layout{
     padding-right: 0px;
