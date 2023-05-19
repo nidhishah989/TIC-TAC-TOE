@@ -45,7 +45,7 @@ function Gameboard ({Setgamestatus,Players,GameMode,setPlayers,SetGameMode}){
       
       useEffect(()=>{
         
-        if(GameMode === 'SinglePlayer' && !player1turn){
+        if(GameMode === 'SinglePlayer' && !player1turn && win.current===null){
             computerturn.current=true
             //computer pick any random empty square to fill
             let emptyindexes = squares.map((square,index)=>{return square==null?index:null }).filter(val=>val!=null)
@@ -56,6 +56,8 @@ function Gameboard ({Setgamestatus,Players,GameMode,setPlayers,SetGameMode}){
             setsquare(newsqaures)
             setplayer1turn(!player1turn)
             computerturn.current=false
+            win.current=checkWinner(newsqaures);
+            gover.current=checkGameOver(newsqaures);
         }
       },[squares])
     

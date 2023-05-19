@@ -50,11 +50,11 @@ function Player({Mode,Players,setPlayers,PlayerInfoshow,handleClose,Setgamestatu
                     <div className="form-row dialog-names">
                         <div className="col mb-3">
                             <label for="validationDefault01">PLAYER 1</label>
-                            <input type="text" className="form-control" id="validationDefault01" placeholder="Your Name" value={Players.player1} maxLength = "10" required onChange={(e) => setplayer1name(e)}/>
+                            <input type="text" className="form-control" id="validationDefault01" placeholder="Your Name" value={Players.player1} maxlength = "10" required onChange={(e) => setplayer1name(e)}/>
                         </div>
                         <div className="col mb-3">
                             <label for="validationDefault02">PLAYER 2</label>
-                            <input type="text" className="form-control player2-input" id="validationDefault02" placeholder="Your Partner Name" value={Players.player2} readOnly={(Mode==='SinglePlayer')?true:false} maxLength = "10" required onChange={(e) => setplayer2name(e)}/>
+                            <input type="text" className="form-control player2-input" id="validationDefault02" placeholder="Your Partner Name" value={Players.player2} readOnly={(Mode==='SinglePlayer')?true:false} maxlength = "10" required onChange={(e) => setplayer2name(e)}/>
                         </div>
                     </div>
                     <div className="form-group dialog-marks">
