@@ -1,3 +1,18 @@
+------------------------------------------------------
+# TIC-TAC-TOE 
+- This project aims to develop an unbeatable AI player for the classic game of tic-tac-toe, utilizing the minimax algorithm. 
+- Additionally, the project incorporates the React.js framework and Bootstrap to create an interactive and visually appealing 
+  user interface for the game
+
+----------------------------------------------------------
+# DEMO 
+
+
+https://github.com/nidhishah989/TIC-TAC-TOE/assets/69876607/16f3584e-8ba9-44e2-ae12-6748907cf6d6
+
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
