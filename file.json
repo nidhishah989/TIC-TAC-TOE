@@ -1,4 +1,5 @@
 {
   "title": "TIC TAC TOE",
-  "description": "GAME WITH REACT.JS"
+  "description": "GAME WITH REACT.JS",
+  "tools" : [{"tool":"React.JS"}]
 }
