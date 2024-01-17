@@ -1,5 +1,18 @@
 {
-  "title": "TIC TAC TOE",
-  "description": "GAME WITH REACT.JS",
-  "tools": [{"tool":"React.JS"}]
+    "title": "TIC TAC TOE",
+    "description": "An unbeatable AI-powered tic-tac-toe game with a user-friendly interface, implemented using React.js, Bootstrap, and the minimax algorithm. Try to beat AI player or play with your partner on any device.",
+    "tools": [
+        {
+            "tool": "React.js"
+        },
+        {
+            "tool": "Bootstrap"
+        },
+        {
+            "tool": "HTML"
+        },
+        {
+            "tool": "CSS"
+        }
+    ]
 }
