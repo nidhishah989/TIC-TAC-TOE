@@ -1,6 +1,6 @@
 {
     "title": "TIC TAC TOE",
-    "prjimg" :"https://raw.githubusercontent.com/nidhishah989/TIC-TAC-TOE/master/TIC_TAC_TOE_img.png",
+    "prjimg" :"https://raw.githubusercontent.com/nidhishah989/TIC-TAC-TOE/master/TIC_TAC_TOE_img_2.png",
     "description": "An unbeatable AI-powered tic-tac-toe game with a user-friendly interface, implemented using React.js, Bootstrap, and the minimax algorithm. Try to beat AI player or play with your partner on any device.",
     "tools": [
         {
